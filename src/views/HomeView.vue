@@ -1,16 +1,16 @@
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import NameBox from '../components/NameBox.vue'
+  import HomeMenu from '../components/HomeMenu.vue'
 
   export default defineComponent({
     components: {
-      NameBox,
+      HomeMenu,
     }
   })
 </script>
 
 <template>
   <main>
-    <NameBox />
+    <HomeMenu />
   </main>
 </template>
