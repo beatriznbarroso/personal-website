@@ -1,7 +1,8 @@
-@import './base.css';
+@import "./base.css";
 
 #app {
   font-weight: normal;
+  @apply p-4;
 }
 
 a,
@@ -19,7 +20,6 @@ a,
 
 @media (min-width: 1024px) {
   body {
-   
   }
 
   #app {

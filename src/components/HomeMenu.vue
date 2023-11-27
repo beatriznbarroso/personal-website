@@ -8,7 +8,7 @@ const clicked = ref(false)
 
 <template>
   <div
-    class="transition ease-in-out delay-75 w-full h-screen translate-[y-100%] lg:w-1/2 p-4"
+    class="transition ease-in-out delay-75 w-full h-screen translate-[y-100%] lg:w-1/2"
     :class="clicked ? 'bg-red-50 translate-y-0' : 'bg-white-100 '">
     <a
       class="block mb-8"
