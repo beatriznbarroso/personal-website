@@ -22,5 +22,21 @@
         </div>
       </div>
     </div>
+    <div class="flex">
+      // HELLO PART 
+      // MY FACE 
+    </div>
+    // ABOUT ME 
+    <div>
+
+    </div>
+    // Work
+    <div>
+
+    </div>
+    // CURRENT SIDE Projects
+    <div>
+      
+    </div>
   </main>
 </template>
