@@ -7,9 +7,13 @@ const clicked = ref(false)
 </script>
 
 <template>
+  <div class="hidden lg:flex page justify-end my-4">
+      <RouterLink to="/" class="mx-2">Home</RouterLink>
+      <RouterLink to="projects" class="mx-2">Current Side Projects</RouterLink>
+  </div>
   <div
-    class="transition ease-in-out delay-75 w-full h-screen translate-[y-100%] lg:w-1/2 p-4"
-    :class="clicked ? 'bg-red-50 translate-y-0' : 'bg-white-100 '">
+    class="block lg:hidden transition ease-in-out delay-75 w-full translate-[y-100%] lg:w-1/2 p-4"
+    :class="clicked ? 'bg-red-50 translate-y-0 h-screen' : 'bg-white-100 '">
     <a
       class="block mb-8"
       @click="clicked = !clicked">
@@ -22,8 +26,6 @@ const clicked = ref(false)
     </a>
     <div v-if="clicked" class="h-1/2">
       <RouterLink to="/" class="block h-1/4">Home</RouterLink>
-      <RouterLink to="about" class="block h-1/4">About me</RouterLink>
-      <RouterLink to="work" class="block h-1/4">Work</RouterLink>
       <RouterLink to="projects" class="block h-1/4">Current Side Projects</RouterLink>
     </div>
   </div>
