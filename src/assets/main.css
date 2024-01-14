@@ -5,13 +5,18 @@
   @apply p-4;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: #A2B29F;
   transition: 0.4s;
 }
 
 .page {
   @apply mx-auto w-60 lg:w-320;
 }
+
+h1,h2,h3,h4,h5,h5 {
+  /* color: #798777; */
+  font-weight: 700 !important;
+}
+

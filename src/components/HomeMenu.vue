@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
-
 const clicked = ref(false)
 
 </script>
 
 <template>
   <div class="hidden lg:flex page justify-end my-4">
-      <RouterLink to="/" class="mx-2">Home</RouterLink>
-      <RouterLink to="projects" class="mx-2">Current Side Projects</RouterLink>
+    <a href="#home" class="mx-2">Home</a>
+    <a href="#about" class="mx-2">About Me</a>
+    <a href="#projects" class="mx-2">Projects</a>
+    <a href="#skills" class="mx-2">Skills</a>
   </div>
   <div
     class="block lg:hidden transition ease-in-out delay-75 w-full translate-[y-100%] lg:w-1/2 p-4"
@@ -25,8 +25,10 @@ const clicked = ref(false)
       </svg>
     </a>
     <div v-if="clicked" class="h-1/2">
-      <RouterLink to="/" class="block h-1/4">Home</RouterLink>
-      <RouterLink to="projects" class="block h-1/4">Current Side Projects</RouterLink>
+      <a href="#home" class="block h-1/4">Home</a>
+      <a href="#about" class="block h-1/4">About Me</a>
+      <a href="#projects" class="block h-1/4">Projects</a>
+      <a href="#skills" class="block h-1/4">Skills</a>
     </div>
   </div>
 </template>
