@@ -7,11 +7,10 @@
           <br>
           <span>Barroso</span>
         </div>
-        <div>
-          <h2>Contact me</h2>
-          <a href=""><img src="../assets/images/email-3d.png" alt="Email logo" class="w-14"></a>
-          <a href=""><img src="../assets/images/linkedin-3d.png" alt="Linkedin logo" class="w-14"></a>
-          <a href=""><img src="../assets/images/github-3d.webp" alt="Linkedin logo" class="w-16"></a>
+        <div class="icon-container">
+          <a href="" class="icon"><img src="../assets/images/email-3d.png" alt="Email logo" class="w-14"></a>
+          <a href="" class="icon"><img src="../assets/images/linkedin-3d.png" alt="Linkedin logo" class="w-14"></a>
+          <a href="" class="icon"><img src="../assets/images/github-3d.webp" alt="Linkedin logo" class="w-16"></a>
         </div>
       </div>
 
@@ -32,3 +31,34 @@
     </div>
   </main>
 </template>
+
+<style>
+.icon-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: spin 10s linear infinite;
+}
+
+.icon {
+  position: absolute;
+  cursor: pointer;
+}
+
+.icon:nth-child(2) {
+  right: 66px;
+}
+
+.icon:nth-child(3) {
+  right: 99px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
