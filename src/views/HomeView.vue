@@ -2,15 +2,26 @@
   <main>
     <div class="page">
       <div id="home" class="lg:flex lg:justify-stretch">
-        <div class="w-1/2 text-8xl">
-          <span>Beatriz</span>
-          <br>
-          <span>Barroso</span>
+        <div class="w-1/2 text-6xl lg:text-8xl">
+          <div class="flex flipping">
+            <div
+              v-for="(value, index) in 'Beatriz'"
+              :key="index"
+            >
+              <span :style="'--i:'+index">{{value}}</span>
+            </div>
+          </div>
+          <div class="flex flipping">
+            <div
+              v-for="(value, index) in 'Barroso'"
+              :key="index"
+            >
+              <span :style="'--i:'+index">{{value}}</span>
+            </div>
+          </div>
         </div>
-        <div class="icon-container">
-          <a href="" class="icon"><img src="../assets/images/email-3d.png" alt="Email logo" class="w-14"></a>
-          <a href="" class="icon"><img src="../assets/images/linkedin-3d.png" alt="Linkedin logo" class="w-14"></a>
-          <a href="" class="icon"><img src="../assets/images/github-3d.webp" alt="Linkedin logo" class="w-16"></a>
+        <div>
+         
         </div>
       </div>
 
@@ -23,42 +34,45 @@
 
       <div id="projects" class="my-4">
         <h2>Projects</h2>
+        <div>
+          Goparity 
+        </div>
+        <div>
+          Back office for stock management 
+        </div>
       </div>
 
       <div id="skills" class="my-4">
         <h2>Skills</h2>
+
+      </div>
+
+      <div id="contact">
+        <h2>Contact</h2>
+        <a href="" class="icon"><img src="../assets/images/email-3d.png" alt="Email logo" class="w-14"></a>
+        <a href="" class="icon"><img src="../assets/images/linkedin-3d.png" alt="Linkedin logo" class="w-14"></a>
+        <a href="" class="icon"><img src="../assets/images/github-3d.webp" alt="Linkedin logo" class="w-16"></a>
       </div>
     </div>
   </main>
 </template>
 
-<style>
-.icon-container {
+<style lang="scss" scoped>
+.flipping {
   position: relative;
-  width: 200px;
-  height: 200px;
-  animation: spin 10s linear infinite;
 }
 
-.icon {
-  position: absolute;
-  cursor: pointer;
+.flipping div span {
+  position: relative;
+  display: inline-block;
+  animation: flip 1s 1;
+  animation-delay: calc(.2s * var(--i))
 }
 
-.icon:nth-child(2) {
-  right: 66px;
-}
-
-.icon:nth-child(3) {
-  right: 99px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
   }
 }
 </style>
+

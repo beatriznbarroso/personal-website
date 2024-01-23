@@ -2,21 +2,23 @@
 
 #app {
   font-weight: normal;
-  @apply p-4;
 }
 
 a {
   text-decoration: none;
-  color: #A2B29F;
+  color: #a2b29f;
   transition: 0.4s;
 }
 
 .page {
-  @apply mx-auto w-60 lg:w-320;
+  @apply mx-auto w-60 lg:w-320 p-4;
 }
 
-h1,h2,h3,h4,h5,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   /* color: #798777; */
   font-weight: 700 !important;
 }
-

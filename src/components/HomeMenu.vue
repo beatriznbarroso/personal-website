@@ -10,6 +10,7 @@ const clicked = ref(false)
     <a href="#about" class="mx-2">About Me</a>
     <a href="#projects" class="mx-2">Projects</a>
     <a href="#skills" class="mx-2">Skills</a>
+    <a href="#contact" class="mx-2">Contact</a>
   </div>
   <div
     class="block lg:hidden transition ease-in-out delay-75 w-full translate-[y-100%] lg:w-1/2 p-4"
@@ -25,10 +26,11 @@ const clicked = ref(false)
       </svg>
     </a>
     <div v-if="clicked" class="h-1/2">
-      <a href="#home" class="block h-1/4">Home</a>
-      <a href="#about" class="block h-1/4">About Me</a>
-      <a href="#projects" class="block h-1/4">Projects</a>
-      <a href="#skills" class="block h-1/4">Skills</a>
+      <a href="#home" class="block h-1/4" @click="clicked = false">Home</a>
+      <a href="#about" class="block h-1/4" @click="clicked = false">About Me</a>
+      <a href="#projects" class="block h-1/4" @click="clicked = false">Projects</a>
+      <a href="#skills" class="block h-1/4" @click="clicked = false">Skills</a>
+      <a href="#contact" class="block h-1/4" @click="clicked = false">Contact</a>
     </div>
   </div>
 </template>
