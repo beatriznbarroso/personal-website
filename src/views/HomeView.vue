@@ -42,7 +42,7 @@ const changeProject = (project:string) => {
         </div>
       </div>
 
-      <div id="projects" class="my-4">
+      <div id="projects" class="my-8">
         <h2 class="mb-4">Projects</h2>
         <div class="lg:grid lg:grid-cols-2">
           <ProjectsDetail 
@@ -59,7 +59,7 @@ const changeProject = (project:string) => {
       </div>
 
 
-      <div id="about" class="my-4">
+      <div id="about" class="my-8">
         <div class="lg:flex">
           <div class="w-full lg:w-1/2">
             <h2 class="mb-4">About</h2>
@@ -75,12 +75,14 @@ const changeProject = (project:string) => {
         </div>
       </div>
       
-      <div id="contact">
-        <h2>Contact</h2>
-        <a href="" class="icon"><img src="../assets/images/email-3d.png" alt="Email logo" class="w-14"></a>
-        <a href="" class="icon"><img src="../assets/images/linkedin-3d.png" alt="Linkedin logo" class="w-14"></a>
-        <a href="" class="icon"><img src="../assets/images/github-3d.webp" alt="Linkedin logo" class="w-14"></a>
-      </div>
+      <div id="contact" class="lg:grid lg:grid-rows-1 lg:justify-items-end">
+          <div class="flex items-center justify-evenly">
+            <p class="mx-2">Contact me</p>
+            <a href="mailto:beatrizscnbarroso@gmail.com" target="_blank" class="mx-2"><img src="../assets/images/email.png" alt="Email logo" class="w-10"></a>
+            <a href="https://www.linkedin.com/in/beatriz-barroso-031905124/" target="_blank" class="mx-2"><img src="../assets/images/linkedin.png" alt="Linkedin logo" class="w-10"></a>
+            <a href="https://github.com/beatriznbarroso" target="_blank" class="mx-2"><img src="../assets/images/github.png" alt="Linkedin logo" class="w-10"></a>
+          </div>
+        </div>
     </div>
   </main>
 </template>
