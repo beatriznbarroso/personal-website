@@ -9,7 +9,6 @@ const clicked = ref(false)
     <a href="#home" class="mx-2">Home</a>
     <a href="#about" class="mx-2">About Me</a>
     <a href="#projects" class="mx-2">Projects</a>
-    <a href="#skills" class="mx-2">Skills</a>
     <a href="#contact" class="mx-2">Contact</a>
   </div>
   <div
@@ -29,7 +28,6 @@ const clicked = ref(false)
       <a href="#home" class="block h-1/4" @click="clicked = false">Home</a>
       <a href="#about" class="block h-1/4" @click="clicked = false">About Me</a>
       <a href="#projects" class="block h-1/4" @click="clicked = false">Projects</a>
-      <a href="#skills" class="block h-1/4" @click="clicked = false">Skills</a>
       <a href="#contact" class="block h-1/4" @click="clicked = false">Contact</a>
     </div>
   </div>

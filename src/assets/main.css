@@ -6,12 +6,12 @@
 
 a {
   text-decoration: none;
-  color: #a2b29f;
+  color: #9DC08B;
   transition: 0.4s;
 }
 
 .page {
-  @apply mx-auto w-60 lg:w-320 p-4;
+  @apply mx-auto w-full lg:w-320 p-4;
 }
 
 h1,
@@ -19,6 +19,6 @@ h2,
 h3,
 h4,
 h5 {
-  /* color: #798777; */
+  color: #609966; 
   font-weight: 700 !important;
 }
