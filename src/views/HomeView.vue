@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ProjectsDetail from '../components/ProjectsDetail.vue'
+import { Vue3Lottie } from 'vue3-lottie'
+import devAnimation from '../assets/json/lottie.json'
 
 const projectData = ref({
   name: 'goparity-website',
@@ -18,7 +20,7 @@ const changeProject = (project:string) => {
 <template>
   <main>
     <div class="page">
-      <div id="home" class="lg:flex lg:justify-stretch">
+      <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-stretch lg:items-center">
         <div class="w-1/2 text-6xl lg:text-8xl">
           <div class="flex flipping">
             <div
@@ -38,7 +40,7 @@ const changeProject = (project:string) => {
           </div>
         </div>
         <div>
-         
+          <Vue3Lottie :animationData="devAnimation" :height="400" :width="400" />
         </div>
       </div>
 
@@ -57,7 +59,6 @@ const changeProject = (project:string) => {
           </div>
         </div>
       </div>
-
 
       <div id="about" class="my-8">
         <div class="lg:flex">
