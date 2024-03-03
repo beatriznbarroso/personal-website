@@ -1,16 +1,21 @@
 @import "./base.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #app {
   font-weight: normal;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
-  @apply font-medium text-purple-400 !important;
+  @apply font-medium text-purple-400;
   transition: 0.4s;
 }
 
 a:hover {
-  @apply font-semibold text-purple-500 !important;
+  @apply font-semibold text-purple-500;
 }
 
 .page {
@@ -23,5 +28,8 @@ h3,
 h4,
 h5 {
   @apply text-purple-600;
-  font-weight: 700 !important;
+}
+
+h2 {
+  @apply font-semibold text-2xl;
 }
