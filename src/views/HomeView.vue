@@ -20,8 +20,8 @@ const changeProject = (project:string) => {
 <template>
   <main>
     <div class="page">
-      <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-stretch lg:items-center">
-        <div class="w-1/2 text-6xl lg:text-8xl">
+      <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
+        <div class="w-1/2 text-6xl lg:text-8xl text-purple-700">
           <div class="flex flipping">
             <div
               v-for="(value, index) in 'Full-Stack'"

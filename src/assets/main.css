@@ -5,9 +5,12 @@
 }
 
 a {
-  text-decoration: none;
-  color: #9DC08B;
+  @apply font-medium text-purple-400 !important;
   transition: 0.4s;
+}
+
+a:hover {
+  @apply font-semibold text-purple-500 !important;
 }
 
 .page {
@@ -19,6 +22,6 @@ h2,
 h3,
 h4,
 h5 {
-  color: #609966; 
+  @apply text-purple-600;
   font-weight: 700 !important;
 }
