@@ -18,7 +18,7 @@ const changeProject = (project:string) => {
 </script>
 
 <template>
-  <main>
+  <main class="scroll-smooth">
     <div class="page">
       <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
         <div class="w-1/2 text-6xl lg:text-8xl text-purple-700">
@@ -52,7 +52,7 @@ const changeProject = (project:string) => {
           />
           <div class="lg:place-self-center">
             <div v-for="(project, index) in projectsList" :key="index">
-              <a class="block hover" @click="changeProject(project.toLowerCase().replace(/\s/g, '-'))">
+              <a class="block cursor-pointer" @click="changeProject(project.toLowerCase().replace(/\s/g, '-'))">
                 {{ project }}
               </a>
             </div>
