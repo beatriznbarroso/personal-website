@@ -6,10 +6,8 @@ const clicked = ref(false)
 
 <template>
   <div class="hidden lg:flex page justify-end my-4">
-    <a href="#home" class="mx-2">Home</a>
-    <a href="#about" class="mx-2">About Me</a>
-    <a href="#projects" class="mx-2">Projects</a>
-    <a href="#contact" class="mx-2">Contact</a>
+    <router-link to="/" class="mx-2">Home</router-link>
+    <router-link to="/projects" class="mx-2">Projects</router-link>
   </div>
   <div
     class="block lg:hidden transition ease-in-out delay-75 w-full translate-[y-100%] lg:w-1/2 p-4"
@@ -25,10 +23,8 @@ const clicked = ref(false)
       </svg>
     </a>
     <div v-if="clicked" class="h-1/2">
-      <a href="#home" class="block h-1/4" @click="clicked = false">Home</a>
-      <a href="#about" class="block h-1/4" @click="clicked = false">About Me</a>
-      <a href="#projects" class="block h-1/4" @click="clicked = false">Projects</a>
-      <a href="#contact" class="block h-1/4" @click="clicked = false">Contact</a>
+      <router-link to="/" class="mx-2">Home</router-link>
+      <router-link to="/projects" class="mx-2">Projects</router-link>
     </div>
   </div>
 </template>

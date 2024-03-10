@@ -1,20 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProjectsDetail from '../components/ProjectsDetail.vue'
 import { Vue3Lottie } from 'vue3-lottie'
 import devAnimation from '../assets/json/lottie.json'
 
-const projectData = ref({
-  name: 'goparity-website',
-  techStack: ['vue', 'MySql']
+let skills = ref({
+  'css': 'proficient',
+  'vue': 'proficient',
+  'google-cloud': 'learning',
+  'docker': 'intermediate',
+  'html': 'proficient',
+  'javascript': 'proficient',
+  'mongo-db': 'learning',
+  'python': 'learning',
+  'php': 'proficient',
+  'react': 'learning',
+  'ruby-on-rails': 'intermediate',
+  'ruby': 'intermediate',
+  'tailwind': 'proficient',
+  'typescript': 'intermediate',
 })
-
-const projectsList = ref(['Goparity Website', 'Goparity App', 'Bergue'])
-
-const changeProject = (project:string) => {
-  projectData.value.name = project
-  projectData.value.techStack = ['vue', 'MySql']
-}
 </script>
 
 <template>
@@ -44,35 +48,27 @@ const changeProject = (project:string) => {
         </div>
       </div>
 
-      <div id="projects" class="my-8">
-        <h2 class="mb-4">Projects</h2>
-        <div class="lg:grid lg:grid-cols-2">
-          <ProjectsDetail 
-            :projectData="projectData"
-          />
-          <div class="lg:place-self-center">
-            <div v-for="(project, index) in projectsList" :key="index">
-              <a class="block cursor-pointer" @click="changeProject(project.toLowerCase().replace(/\s/g, '-'))">
-                {{ project }}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div id="about" class="my-8">
         <div class="lg:flex">
-          <div class="w-full lg:w-1/2">
+          <div class="w-full">
             <h2 class="mb-4">About</h2>
             <p>
               Hello <span class="mx-2 animate-bounce">👋</span> My name is a Beatriz and I'm a self-made developer. Even though my traditional path did not start in Computer Science, I become fascinated by it after a workshop. I decided to do a bootcamp and worked as a Full Stack Developer ever since.
             </p>
           </div>
-          <div>
-            <h2 class="mb-4">Skills</h2>
+        </div>
+      </div>
 
+      <div class="my-8">
+        <h2 class="mb-4">Skills</h2>
+        <div 
+          class="grid grid-cols-2 lg:grid-cols-6"
+        >
+          <div  v-for="(value, key, index) in skills" :key="index" >
+            <img :src="`../assets/images/tech-stack/${key}.png`" :alt="key+' image'">
+            {{ value }}
+            {{ key }}
           </div>
-
         </div>
       </div>
       
