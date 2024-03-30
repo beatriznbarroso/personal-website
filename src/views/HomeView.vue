@@ -6,32 +6,38 @@ import devAnimation from '../assets/json/lottie.json'
 const visible = ref<number | null>(null)
 
 let skills = ref<object>({
+  'html': {
+    'url': new URL("@/assets/images/tech-stack/html.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
+  },
   'css': {
     'url': new URL("@/assets/images/tech-stack/css.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
     'color': '#416D19'
   },
-  'vue': {
-    'url': new URL("@/assets/images/tech-stack/vue.png", import.meta.url),
+  'tailwind': {
+    'url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
     'color': '#416D19'
   },
-  'google-cloud': {
-    'url': new URL("@/assets/images/tech-stack/google-cloud.png", import.meta.url),
-    'experience': 'learning',
-    'progress': 30,
-    'color': '#F9E897'
+  'bootstrap': {
+    'url': new URL("@/assets/images/tech-stack/bootstrap.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
   },
-  'docker': {
-    'url': new URL("@/assets/images/tech-stack/docker.png", import.meta.url),
-    'experience': 'intermediate',
-    'progress': 70,
-    'color': '#FFC374'
+  'materialize': {
+    'url': new URL("@/assets/images/tech-stack/materialize.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
   },
-  'html': {
-    'url': new URL("@/assets/images/tech-stack/html.png", import.meta.url),
+  'jquery': {
+    'url': new URL("@/assets/images/tech-stack/jquery.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
     'color': '#416D19'
@@ -42,11 +48,59 @@ let skills = ref<object>({
     'progress': 100,
     'color': '#416D19'
   },
+  'typescript': {
+    'url': new URL("@/assets/images/tech-stack/typescript.png", import.meta.url),
+    'experience': 'intermediate',
+    'progress': 70,
+    'color': '#FFC374'
+  },
+  'vue': {
+    'url': new URL("@/assets/images/tech-stack/vue.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
+  },
+  'nuxt': {
+    'url': new URL("@/assets/images/tech-stack/nuxt.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
+  },
+  'react': {
+    'url': new URL("@/assets/images/tech-stack/react.png", import.meta.url),
+    'experience': 'learning',
+    'progress': 30,
+    'color': '#F9E897'
+  },
+  'aws': {
+    'url': new URL("@/assets/images/tech-stack/aws.png", import.meta.url),
+    'experience': 'learning',
+    'progress': 30,
+    'color': '#F9E897'
+  },
+  'docker': {
+    'url': new URL("@/assets/images/tech-stack/docker.png", import.meta.url),
+    'experience': 'intermediate',
+    'progress': 70,
+    'color': '#FFC374'
+  },
+  'mysql': {
+    'url': new URL("@/assets/images/tech-stack/mysql.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
+  },
   'mongo-db': {
     'url': new URL("@/assets/images/tech-stack/mongo-db.png", import.meta.url),
     'experience': 'learning',
     'progress': 30,
     'color': '#F9E897'
+  },
+  'redis': {
+    'url': new URL("@/assets/images/tech-stack/redis.png", import.meta.url),
+    'experience': 'intermediate',
+    'progress': 70,
+    'color': '#FFC374'
   },
   'python': {
     'url': new URL("@/assets/images/tech-stack/python.png", import.meta.url),
@@ -60,17 +114,11 @@ let skills = ref<object>({
     'progress': 100,
     'color': '#416D19'
   },
-  'react': {
-    'url': new URL("@/assets/images/tech-stack/react.png", import.meta.url),
-    'experience': 'learning',
-    'progress': 30,
-    'color': '#F9E897'
-  },
-  'ruby-on-rails': {
-    'url': new URL("@/assets/images/tech-stack/ruby-on-rails.png", import.meta.url),
-    'experience': 'intermediate',
-    'progress': 70,
-    'color': '#FFC374'
+  'laravel': {
+    'url': new URL("@/assets/images/tech-stack/laravel.png", import.meta.url),
+    'experience': 'proficient',
+    'progress': 100,
+    'color': '#416D19'
   },
   'ruby': {
     'url': new URL("@/assets/images/tech-stack/ruby.png", import.meta.url),
@@ -78,18 +126,12 @@ let skills = ref<object>({
     'progress': 70,
     'color': '#FFC374'
   },
-  'tailwind': {
-    'url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
-    'experience': 'proficient',
-    'progress': 100,
-    'color': '#416D19'
-  },
-  'typescript': {
-    'url': new URL("@/assets/images/tech-stack/typescript.png", import.meta.url),
+  'ruby-on-rails': {
+    'url': new URL("@/assets/images/tech-stack/ruby-on-rails.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
     'color': '#FFC374'
-  }
+  },
 })
 </script>
 
@@ -118,23 +160,30 @@ let skills = ref<object>({
         <div class="lg:flex">
           <div class="w-full">
             <h2 class="mb-4">About</h2>
-            <p>
-              Hello <span class="mx-2 animate-bounce">👋</span> My name is a Beatriz and I'm a self-made developer. Even
-              though my traditional path did not start in Computer Science, I become fascinated by it after a workshop.
-              I decided to do a bootcamp and worked as a Full Stack Developer ever since.
-            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <p>
+                Hello 👋 My name is a Beatriz and I'm a self-made developer. Even
+                though my traditional path did not start in Computer Science, I become fascinated by it after a
+                workshop.
+                I decided to do a bootcamp and worked as a Full Stack Developer ever since.
+              </p>
+              <div class="place-self-center">
+                <img src="../assets/images/beatriz.png" alt="My photo" class="border-yellow-500 border-8">
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="my-8">
-        <h2 class="mb-4">Skills</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-8 gap-y-2 gap-x-2 place-items-center">
-          <div v-for="(value, key, index) in skills" :key="index">
-            <img :src="value.url" class="h-12" @mouseover="visible = index" @mouseout="visible = null">
-            <div v-if="visible === index" class="mt-6">
-              <p class="text-xs">skill Level</p>
-              <div class="meter my-2">
+        <h2 class="mb-8">Skill Set</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-8 gap-y-8 gap-x-2 place-items-center">
+          <div v-for="(value, key, index) in skills" :key="index" class="h-24">
+            <img :src="value.url" class="h-14 hover:scale-125 transition-transform" @mouseover="visible = index"
+              @mouseout="visible = null">
+            <div v-if="visible === index" class="mt-4">
+              <p class="text-xs text-gray-100">skill level</p>
+              <div class="meter my-1 rounded-r-lg">
                 <span :style="'width:'+value.progress+'%;'">
                   <span class="progress" :style="'background-color:' + value.color "></span>
                 </span>
@@ -148,13 +197,13 @@ let skills = ref<object>({
         <div class="flex items-center justify-evenly">
           <p class="mx-2">Contact me</p>
           <a href="mailto:beatrizscnbarroso@gmail.com" target="_blank" class="mx-2">
-            <img src="../assets/images/email.png" alt="Email logo" class="w-10">
+            <img src="../assets/images/email.png" alt="Email logo" class="h-10">
           </a>
           <a href="https://www.linkedin.com/in/beatriz-barroso-031905124/" target="_blank" class="mx-2">
-            <img src="../assets/images/linkedin.png" alt="Linkedin logo" class="w-10">
+            <img src="../assets/images/linkedin.png" alt="Linkedin logo" class="h-10">
           </a>
           <a href="https://github.com/beatriznbarroso" target="_blank" class="mx-2">
-            <img src="../assets/images/github.png" alt="Linkedin logo" class="w-10">
+            <img src="../assets/images/github.png" alt="Github logo" class="h-10">
           </a>
         </div>
       </div>

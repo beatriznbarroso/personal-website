@@ -10,12 +10,12 @@
 }
 
 a {
-  @apply font-medium text-purple-400;
+  @apply font-medium text-purple-600;
   transition: 0.4s;
 }
 
 a:hover {
-  @apply font-semibold text-purple-500;
+  @apply font-semibold text-purple-700;
 }
 
 .page {
@@ -27,7 +27,7 @@ h2,
 h3,
 h4,
 h5 {
-  @apply text-purple-600;
+  @apply text-purple-700;
 }
 
 h2 {
