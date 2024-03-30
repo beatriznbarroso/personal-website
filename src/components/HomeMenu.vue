@@ -25,9 +25,9 @@ const clicked = ref<boolean>(false)
         </svg>
       </a>
       <div v-if="clicked" class="h-1/2 flex flex-col">
-        <router-link to="/" class="mx-2">Home</router-link>
-        <router-link to="/projects" class="mx-2">Projects</router-link>
-        <a href="/#contact">Contact</a>
+        <router-link to="/" class="m-2" @click="clicked=false">Home</router-link>
+        <router-link to="/projects" class="m-2" @click="clicked = false">Projects</router-link>
+        <a href="/#contact" @click="clicked = false" class="m-2">Contact</a>
       </div>
     </div>
   </div>
