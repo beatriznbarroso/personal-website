@@ -3,8 +3,9 @@ import { ref } from 'vue'
 import { Vue3Lottie } from 'vue3-lottie'
 import devAnimation from '../assets/json/lottie.json'
 
-const visible = ref(null)
-let skills = ref({
+const visible = ref<number | null>(null)
+
+let skills = ref<object>({
   'css': {
     'url': new URL("@/assets/images/tech-stack/css.png", import.meta.url),
     'experience': 'proficient',
@@ -90,7 +91,6 @@ let skills = ref({
     'color': '#FFC374'
   }
 })
-
 </script>
 
 <template>
@@ -194,7 +194,7 @@ let skills = ref({
 
 .progress {
   background-color: #e4c465;
-  animation: progressBar 3s ease-in-out;
+  animation: progressBar 1s ease-in-out;
   animation-fill-mode: both;
 }
 
