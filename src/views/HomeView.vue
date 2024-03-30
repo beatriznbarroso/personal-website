@@ -161,12 +161,44 @@ let skills = ref<object>({
           <div class="w-full">
             <h2 class="mb-4">About</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2">
-              <p>
-                Hello 👋 My name is a Beatriz and I'm a self-made developer. Even
-                though my traditional path did not start in Computer Science, I become fascinated by it after a
-                workshop.
-                I decided to do a bootcamp and worked as a Full Stack Developer ever since.
-              </p>
+              <div>
+                <p>
+                  Hello 👋 My name is a Beatriz and I'm a self-made developer.
+                </p>
+                <br>
+                <p>
+                  So, picture this: I was knee-deep in the world of theatre, soaking up the drama and creativity, when I
+                  stumbled upon a coding bootcamp. Crazy, right? But that's where the magic happened.
+                </p>
+                <br>
+                <p>
+                  Coding wasn't even on my radar, but once I dipped my toes into it, I was hooked. It was like
+                  discovering
+                  a whole new way to express myself, just with lines of code instead of lines on a stage.
+                </p>
+                <br>
+                <p>
+                  Fast forward a bit, and I found myself at Goparity, this awesome tech company with a mission I could
+                  really get behind. For the past five years, I've been pouring my heart and soul into our work, from
+                  coding to managing a team.
+                </p>
+                <br>
+                <p>
+                  Now, as the CTO, I'm juggling a bunch of responsibilities, but I'm still getting my hands dirty with
+                  code. I mean, you can take the person out of coding, but you can't take coding out of the person,
+                  right?
+                </p>
+                <br>
+                <p>
+                  I'm all about pushing boundaries and learning new stuff. With technology evolving faster than you can
+                  say "bug fix," I'm constantly on the lookout for the next big thing.
+                </p>
+                <br>
+                <p>
+                  So yeah, that's my journey – from theatre buff to coding wizard. Who knows what's next? But I'm ready
+                  for whatever comes my way.
+                </p>
+              </div>
               <div class="place-self-center">
                 <img src="../assets/images/beatriz.png" alt="My photo" class="border-yellow-500 border-8">
               </div>

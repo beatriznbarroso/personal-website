@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const clicked = ref<boolean>(false)
+const path = computed(() => route.path)
 </script>
 
 <template>
   <div>
     <div class="hidden lg:flex page justify-end my-4">
-      <router-link to="/" class="mx-2">Home</router-link>
-      <router-link to="/projects" class="mx-2">Projects</router-link>
+      <router-link to="/" class="mx-2" :class="path === '/' ? 'text-purple-700 font-bold' : ''">Home</router-link>
+      <router-link to="/projects" class="mx-2" :class="path === '/projects' ? 'text-purple-700 font-bold' : ''">Projects</router-link>
     </div>
     <div class="block lg:hidden transition ease-in-out delay-75 w-full translate-[y-100%] lg:w-1/2 p-4"
       :class="clicked ? 'bg-red-50 translate-y-0 h-screen' : 'bg-white-100 '">
@@ -25,8 +28,13 @@ const clicked = ref<boolean>(false)
         </svg>
       </a>
       <div v-if="clicked" class="h-1/2 flex flex-col">
-        <router-link to="/" class="m-2" @click="clicked=false">Home</router-link>
-        <router-link to="/projects" class="m-2" @click="clicked = false">Projects</router-link>
+        <router-link to="/" class="m-2" @click="clicked=false" :class="path === '/' ? 'text-purple-700 font-bold' : ''">
+          Home
+        </router-link>
+        <router-link to="/projects" class="m-2" :class="path === '/projects' ? 'text-purple-700 font-bold' : ''"
+          @click="clicked = false">
+          Projects
+        </router-link>
         <a href="/#contact" @click="clicked = false" class="m-2">Contact</a>
       </div>
     </div>
