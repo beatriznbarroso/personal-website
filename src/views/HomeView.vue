@@ -199,7 +199,7 @@ let skills = ref<object>({
                   for whatever comes my way.
                 </p>
               </div>
-              <div class="place-self-center">
+              <div class="place-self-center mt-8 lg:mt-0">
                 <img src="../assets/images/beatriz.png" alt="My photo"
                   class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
               </div>
@@ -212,7 +212,7 @@ let skills = ref<object>({
         <h2 class="mb-8">Skill Set</h2>
         <div class="grid grid-cols-2 lg:grid-cols-8 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
-            <img :src="value.url" class="h-14 hover:scale-125 transition-transform hover:hue-rotate-90"
+            <img :src="value.url" class="h-14 hover:scale-125 transition-transform"
               @mouseover="visible = index" @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
