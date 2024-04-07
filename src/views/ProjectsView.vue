@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import ProjectsDetail from '../components/ProjectsDetail.vue'
+
 
 </script>
 
 <template>
   <div class="page">
     <div class="my-8">
-      <div class="lg:grid lg:grid-cols-3">
+      <div>
         <ProjectsDetail />
       </div>
     </div>
