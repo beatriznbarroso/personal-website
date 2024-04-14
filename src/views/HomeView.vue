@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Vue3Lottie } from 'vue3-lottie'
-import devAnimation from '../assets/json/lottie.json'
-
 const visible = ref<number | null>(null)
 
 let skills = ref<object>({
@@ -10,127 +7,127 @@ let skills = ref<object>({
     'url': new URL("@/assets/images/tech-stack/html.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'css': {
     'url': new URL("@/assets/images/tech-stack/css.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'tailwind': {
     'url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'bootstrap': {
     'url': new URL("@/assets/images/tech-stack/bootstrap.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'materialize': {
     'url': new URL("@/assets/images/tech-stack/materialize.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'jquery': {
     'url': new URL("@/assets/images/tech-stack/jquery.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'javascript': {
     'url': new URL("@/assets/images/tech-stack/javascript.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'typescript': {
     'url': new URL("@/assets/images/tech-stack/typescript.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
-    'color': '#FFC374'
+    'color': '#01C38D'
   },
   'vue': {
     'url': new URL("@/assets/images/tech-stack/vue.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'nuxt': {
     'url': new URL("@/assets/images/tech-stack/nuxt.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'react': {
     'url': new URL("@/assets/images/tech-stack/react.png", import.meta.url),
     'experience': 'learning',
     'progress': 30,
-    'color': '#F9E897'
+    'color': '#01C38D'
   },
   'aws': {
     'url': new URL("@/assets/images/tech-stack/aws.png", import.meta.url),
     'experience': 'learning',
     'progress': 30,
-    'color': '#F9E897'
+    'color': '#01C38D'
   },
   'docker': {
     'url': new URL("@/assets/images/tech-stack/docker.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
-    'color': '#FFC374'
+    'color': '#01C38D'
   },
   'mysql': {
     'url': new URL("@/assets/images/tech-stack/mysql.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'mongo-db': {
     'url': new URL("@/assets/images/tech-stack/mongo-db.png", import.meta.url),
     'experience': 'learning',
     'progress': 30,
-    'color': '#F9E897'
+    'color': '#01C38D'
   },
   'redis': {
     'url': new URL("@/assets/images/tech-stack/redis.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
-    'color': '#FFC374'
+    'color': '#01C38D'
   },
   'python': {
     'url': new URL("@/assets/images/tech-stack/python.png", import.meta.url),
     'experience': 'learning',
     'progress': 30,
-    'color': '#F9E897'
+    'color': '#01C38D'
   },
   'php': {
     'url': new URL("@/assets/images/tech-stack/php.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'laravel': {
     'url': new URL("@/assets/images/tech-stack/laravel.png", import.meta.url),
     'experience': 'proficient',
     'progress': 100,
-    'color': '#416D19'
+    'color': '#01C38D'
   },
   'ruby': {
     'url': new URL("@/assets/images/tech-stack/ruby.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
-    'color': '#FFC374'
+    'color': '#01C38D'
   },
   'ruby-on-rails': {
     'url': new URL("@/assets/images/tech-stack/ruby-on-rails.png", import.meta.url),
     'experience': 'intermediate',
     'progress': 70,
-    'color': '#FFC374'
+    'color': '#01C38D'
   },
 })
 </script>
@@ -139,28 +136,30 @@ let skills = ref<object>({
   <main class="scroll-smooth">
     <div class="page">
       <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
-        <div class="w-1/2 text-6xl lg:text-8xl text-purple-700">
-          <div class="flex flipping">
-            <div v-for="(value, index) in 'Full-Stack'" :key="index">
+        <div class="w-1/2 font-extrabold">
+          <div class="flex flipping text-6xl lg:text-9xl text-green-200">
+            <h3 v-for="(value, index) in 'Beatriz'" :key="index" style="font-family: Playfair, serif;">
               <span :style="'--i:'+index">{{value}}</span>
-            </div>
+            </h3>
           </div>
-          <div class="flex flipping">
-            <div v-for="(value, index) in 'Developer'" :key="index">
+          <div class="flex flipping text-6xl lg:text-9xl text-green-200">
+            <h3 v-for="(value, index) in 'Barroso'" :key="index" style="font-family: Playfair, serif;">
               <span :style="'--i:'+index">{{value}}</span>
-            </div>
+            </h3>
           </div>
+          <p class="font-extralight text-white tracking-widest text-2xl">Full-Stack Developer</p>
         </div>
         <div>
-          <Vue3Lottie :animationData="devAnimation" :height="400" :width="400" />
+          <img src="../assets/images/beatriz.png" alt="My photo"
+                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
         </div>
       </div>
 
-      <div id="about" class="my-8">
+      <div id="about" class="mt-32">
         <div class="lg:flex">
           <div class="w-full">
             <h2 class="mb-4">About</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 font-extralight">
               <div>
                 <p>
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
@@ -200,17 +199,16 @@ let skills = ref<object>({
                 </p>
               </div>
               <div class="place-self-center mt-8 lg:mt-0">
-                <img src="../assets/images/beatriz.png" alt="My photo"
-                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
+                
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="my-8">
+      <div class="my-24">
         <h2 class="mb-8">Skill Set</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-8 gap-y-8 gap-x-2 place-items-center">
+        <div class="grid grid-cols-2 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
             <img :src="value.url" class="h-14 hover:scale-125 transition-transform"
               @mouseover="visible = index" @mouseout="visible = null">
@@ -226,9 +224,9 @@ let skills = ref<object>({
         </div>
       </div>
 
-      <div id="contact" class="lg:grid lg:grid-rows-1 lg:justify-items-end">
-        <div class="flex items-center justify-evenly">
-          <p class="mx-2">Contact me</p>
+      <div id="contact" class="lg:grid lg:grid-rows-1 lg:justify-items-center">
+        <h3 class="m-2">Looking forward to hearing from you!</h3>
+        <div class="flex items-center justify-center">
           <a href="mailto:beatrizscnbarroso@gmail.com" target="_blank" class="mx-2">
             <img src="../assets/images/email.png" alt="Email logo" class="h-10">
           </a>
