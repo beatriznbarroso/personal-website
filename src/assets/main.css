@@ -21,9 +21,7 @@ a:hover {
 }
 
 .page {
-  @apply mx-32 w-full lg:w-320 p-4;
-  /** MARGIN 11 rem
-  // adapt width **/
+  @apply mx-2 lg:mx-32 w-full lg:w-320 p-4;
 }
 
 h1,

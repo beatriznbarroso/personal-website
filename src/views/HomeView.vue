@@ -136,24 +136,25 @@ let skills = ref<object>({
   <main class="scroll-smooth">
     <div class="page">
       <div id="home" class="lg:flex lg:justify-between lg:items-center">
-        <div>
+        <div class="w-fit">
           <div class="font-extrabold w-fit">
             <h3 style="font-family: Playfair, serif;"
-              class="typing-effect typing-effect__line1 text-6xl lg:text-9xl text-green-200">
+              class="typing-effect typing-effect__line1 text-8xl lg:text-9xl text-green-200">
               Beatriz
             </h3>
           </div>
           <div class="font-extrabold">
             <h3 style="font-family: Playfair, serif;"
-              class="typing-effect typing-effect__line2 text-6xl lg:text-9xl text-green-200 m-0 p-0">
+              class="typing-effect typing-effect__line2 text-8xl lg:text-9xl text-green-200 m-0 p-0">
               Barroso.
             </h3>
             <p class="font-extralight text-white tracking-widest text-2xl">Full-Stack Developer</p>
           </div>
         </div>
-        <div>
+        <div class="relative">
           <img src="../assets/images/beatriz.png" alt="My photo"
             class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
+          <div class="absolute bg-green-200 h-12 top-1/2 transform rotate-45 reveal"></div>
         </div>
       </div>
 
@@ -280,6 +281,11 @@ let skills = ref<object>({
   50% {
     border-color: #01C38D
   }
+}
+
+.reveal {
+  animation: typing 4s;
+  animation-delay: 4s;
 }
 
 .meter {
