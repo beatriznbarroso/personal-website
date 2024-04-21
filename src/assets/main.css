@@ -1,12 +1,14 @@
 @import "./base.css";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 #app {
   font-weight: normal;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -19,7 +21,9 @@ a:hover {
 }
 
 .page {
-  @apply mx-auto w-full lg:w-320 p-4;
+  @apply mx-32 w-full lg:w-320 p-4;
+  /** MARGIN 11 rem
+  // adapt width **/
 }
 
 h1,
@@ -27,9 +31,10 @@ h2,
 h3,
 h4,
 h5 {
-  @apply text-purple-700;
+  @apply text-green-200 font-extrabold;
+  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
-  @apply font-semibold text-2xl;
+  font-size: 40px;
 }
