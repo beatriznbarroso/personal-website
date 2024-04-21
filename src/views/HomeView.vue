@@ -135,23 +135,25 @@ let skills = ref<object>({
 <template>
   <main class="scroll-smooth">
     <div class="page">
-      <div id="home" class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
-        <div class="w-1/2 font-extrabold">
-          <div class="flex flipping text-6xl lg:text-9xl text-green-200">
-            <h3 v-for="(value, index) in 'Beatriz'" :key="index" style="font-family: Playfair, serif;">
-              <span :style="'--i:'+index">{{value}}</span>
+      <div id="home" class="lg:flex lg:justify-between lg:items-center">
+        <div>
+          <div class="font-extrabold w-fit">
+            <h3 style="font-family: Playfair, serif;"
+              class="typing-effect typing-effect__line1 text-6xl lg:text-9xl text-green-200">
+              Beatriz
             </h3>
           </div>
-          <div class="flex flipping text-6xl lg:text-9xl text-green-200">
-            <h3 v-for="(value, index) in 'Barroso'" :key="index" style="font-family: Playfair, serif;">
-              <span :style="'--i:'+index">{{value}}</span>
+          <div class="font-extrabold">
+            <h3 style="font-family: Playfair, serif;"
+              class="typing-effect typing-effect__line2 text-6xl lg:text-9xl text-green-200 m-0 p-0">
+              Barroso.
             </h3>
+            <p class="font-extralight text-white tracking-widest text-2xl">Full-Stack Developer</p>
           </div>
-          <p class="font-extralight text-white tracking-widest text-2xl">Full-Stack Developer</p>
         </div>
         <div>
           <img src="../assets/images/beatriz.png" alt="My photo"
-                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
+            class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)]">
         </div>
       </div>
 
@@ -199,7 +201,7 @@ let skills = ref<object>({
                 </p>
               </div>
               <div class="place-self-center mt-8 lg:mt-0">
-                
+
               </div>
             </div>
           </div>
@@ -210,8 +212,8 @@ let skills = ref<object>({
         <h2 class="mb-8">Skill Set</h2>
         <div class="grid grid-cols-2 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
-            <img :src="value.url" class="h-14 hover:scale-125 transition-transform"
-              @mouseover="visible = index" @mouseout="visible = null">
+            <img :src="value.url" class="h-14 hover:scale-125 transition-transform" @mouseover="visible = index"
+              @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
               <div class="meter my-1 rounded-r-lg">
@@ -243,20 +245,40 @@ let skills = ref<object>({
 </template>
 
 <style lang="scss" scoped>
-.flipping {
-  position: relative;
+.typing-effect {
+  width: 0;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
 }
 
-.flipping div span {
-  position: relative;
-  display: inline-block;
-  animation: flip 1s 1;
-  animation-delay: calc(.2s * var(--i))
+.typing-effect__line1 {
+  animation: typing 2s steps(30, end) forwards, blink-caret 1s 2;
 }
 
-@keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
+.typing-effect__line2 {
+  animation: typing 2s steps(30, end) forwards, blink-caret 1s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #01C38D
   }
 }
 
