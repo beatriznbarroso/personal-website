@@ -16,8 +16,13 @@
   margin: 0;
 }
 
+html,
 body {
-  min-height: 100vh;
+  position: relative;
+  height: 100%;
+}
+
+body {
   color: white;
   background-color: var(--color-background);
 }

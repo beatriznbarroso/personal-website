@@ -1,17 +1,19 @@
 <script lang="ts">
-import HomeMenu from './components/HomeMenu.vue'
+// import HomeMenu from './components/HomeMenu.vue'
 import { defineComponent } from 'vue'
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 
 export default defineComponent({
   components: {
-    HomeMenu,
+    // HomeMenu,
   }
 })
 </script>
 
 <template>
-  <HomeMenu />
+  <!-- <HomeMenu /> -->
   <RouterView />
 </template>
 
