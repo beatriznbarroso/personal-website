@@ -22,7 +22,7 @@ a:hover {
 }
 
 .page {
-  @apply mx-2 lg:mx-32 2xl:mx-64 w-full lg:w-320 2xl:w-420 p-4 my-20;
+  @apply mx-2 lg:mx-32 2xl:mx-64 w-full lg:w-320 2xl:w-420 p-4;
 }
 
 h1,
@@ -58,8 +58,8 @@ h2 {
 
 swiper-vertical > .swiper-pagination-bullets,
 .swiper-pagination-vertical.swiper-pagination-bullets {
-  /* left: 10% !important;
-  top: 40% !important; */
+  left: 4% !important;
+  top: 40% !important;
   transform: translate3d(0px, -50%, 0);
 }
 

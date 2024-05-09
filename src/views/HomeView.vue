@@ -1,17 +1,19 @@
 <template>
   <swiper
     :direction="'vertical'"
+    :autoplay="false"
     :slidesPerView="1"
-    :spaceBetween="30"
+    :spaceBetween="10"
     :mousewheel="true"
     :pagination="{
       clickable: true,
+      dynamicBullets: true
     }"
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide> 
-      <div id="home" class="page lg:grid lg:grid-cols-2 lg:justify-items-start h-fit">
+    <swiper-slide class="mt-8"> 
+      <div class="page lg:grid lg:grid-cols-2 lg:justify-items-start h-fit">
         <div class="w-fit">
           <div class="font-extrabold w-fit">
             <h3 style="font-family: Playfair, serif;"
@@ -39,7 +41,7 @@
       </div>
     </swiper-slide>
     <swiper-slide>
-      <div id="about" class="page">
+      <div class="page mt-4">
         <div class="lg:flex">
           <div class="w-full">
             <h2 class="mb-4">About</h2>
@@ -49,40 +51,8 @@
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
                 </p>
                 <br>
-                <p>
-                  So, picture this: I was knee-deep in the world of theatre, soaking up the drama and creativity, when I
-                  stumbled upon a coding bootcamp. Crazy, right? But that's where the magic happened.
-                </p>
-                <br>
-                <p>
-                  Coding wasn't even on my radar, but once I dipped my toes into it, I was hooked. It was like
-                  discovering
-                  a whole new way to express myself, just with lines of code instead of lines on a stage.
-                </p>
-                <br>
-                <p>
-                  Fast forward a bit, and I found myself at Goparity, this awesome tech company with a mission I could
-                  really get behind. For the past five years, I've been pouring my heart and soul into our work, from
-                  coding to managing a team.
-                </p>
-                <br>
-                <p>
-                  Now, as the CTO, I'm juggling a bunch of responsibilities, but I'm still getting my hands dirty with
-                  code. I mean, you can take the person out of coding, but you can't take coding out of the person,
-                  right?
-                </p>
-                <br>
-                <p>
-                  I'm all about pushing boundaries and learning new stuff. With technology evolving faster than you can
-                  say "bug fix," I'm constantly on the lookout for the next big thing.
-                </p>
-                <br>
-                <p>
-                  So yeah, that's my journey – from theatre buff to coding wizard. Who knows what's next? But I'm ready
-                  for whatever comes my way.
-                </p>
               </div>
-              <div class="place-self-center mt-8 lg:mt-0">
+              <div class="place-self-center lg:mt-0">
 
               </div>
             </div>
@@ -107,6 +77,12 @@
             </div>
           </div>
         </div>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="page">
+        <h2 class="mb-8">Projects</h2>
+       
       </div>
     </swiper-slide>
     <swiper-slide>
