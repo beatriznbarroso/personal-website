@@ -32,10 +32,12 @@ h4,
 h5 {
   @apply text-green-200 font-extrabold;
   font-family: "Montserrat", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .swiper {

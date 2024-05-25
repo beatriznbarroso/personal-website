@@ -1,18 +1,9 @@
 <template>
-  <swiper
-    :direction="'vertical'"
-    :autoplay="false"
-    :slidesPerView="1"
-    :spaceBetween="10"
-    :mousewheel="true"
-    :pagination="{
+  <swiper :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true" :pagination="{
       clickable: true,
       dynamicBullets: true
-    }"
-    :modules="modules"
-    class="mySwiper"
-  >
-    <swiper-slide class="mt-8"> 
+    }" :modules="modules" class="mySwiper">
+    <swiper-slide class="mt-8">
       <div class="page lg:grid lg:grid-cols-2 lg:justify-items-start h-fit">
         <div class="w-fit">
           <div class="font-extrabold w-fit">
@@ -44,7 +35,8 @@
       <div class="page mt-4">
         <div class="lg:flex">
           <div class="w-full">
-            <h2 class="mb-4">About</h2>
+            <h2 class="about">About</h2>
+            <h2 class="mb-8 about-me">Me</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 font-extralight">
               <div>
                 <p>
@@ -63,10 +55,10 @@
     <swiper-slide>
       <div class="page">
         <h2 class="mb-8">Skill Set</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
+        <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
-            <img :src="value.url" class="h-14 hover:scale-125 transition-transform" @mouseover="visible = index"
-              @mouseout="visible = null">
+            <img :src="visible === index ? value.url : value.grey_url" class="h-14 hover:scale-125 transition-transform"
+              @mouseover="visible = index" @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
               <div class="meter my-1 rounded-r-lg">
@@ -80,9 +72,21 @@
       </div>
     </swiper-slide>
     <swiper-slide>
-      <div class="page">
-        <h2 class="mb-8">Projects</h2>
-       
+      <div>
+        <h2 class="ml-32">Professional projects</h2>
+        <swiper :pagination="{
+            dynamicBullets: true,
+          }" height="576" :modules="modules">
+          <swiper-slide>
+            <img src="../assets/images/goparity-app.png" alt="Goparity app" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/goparity-website.png" alt="Goparity website" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/bergue.png" alt="Bergue website" />
+          </swiper-slide>
+        </swiper>
       </div>
     </swiper-slide>
     <swiper-slide>
@@ -99,14 +103,14 @@
             <img src="../assets/images/github.png" alt="Github logo" class="h-10">
           </a>
         </div>
-      </div> 
+      </div>
     </swiper-slide>
   </swiper>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { ref, watch } from 'vue'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination } from 'swiper/modules';
@@ -121,126 +125,147 @@ export default {
 
     let skills = ref<object>({
       'html': {
+        'grey_url': new URL("@/assets/images/tech-stack/html-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/html.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'css': {
+        'grey_url': new URL("@/assets/images/tech-stack/css-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/css.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'tailwind': {
+        'grey_url': new URL("@/assets/images/tech-stack/tailwind-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'bootstrap': {
+        'grey_url': new URL("@/assets/images/tech-stack/bootstrap-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/bootstrap.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'materialize': {
+        'grey_url': new URL("@/assets/images/tech-stack/materialize-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/materialize.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'jquery': {
+        'grey_url': new URL("@/assets/images/tech-stack/jquery-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/jquery.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'javascript': {
+        'grey_url': new URL("@/assets/images/tech-stack/javascript-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/javascript.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'typescript': {
+        'grey_url': new URL("@/assets/images/tech-stack/typescript-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/typescript.png", import.meta.url),
         'experience': 'intermediate',
         'progress': 70,
         'color': '#01C38D'
       },
       'vue': {
+        'grey_url': new URL("@/assets/images/tech-stack/vue-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/vue.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'nuxt': {
+        'grey_url': new URL("@/assets/images/tech-stack/nuxt-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/nuxt.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'react': {
+        'grey_url': new URL("@/assets/images/tech-stack/react-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/react.png", import.meta.url),
         'experience': 'learning',
         'progress': 30,
         'color': '#01C38D'
       },
       'aws': {
+        'grey_url': new URL("@/assets/images/tech-stack/aws-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/aws.png", import.meta.url),
         'experience': 'learning',
         'progress': 30,
         'color': '#01C38D'
       },
       'docker': {
+        'grey_url': new URL("@/assets/images/tech-stack/docker-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/docker.png", import.meta.url),
         'experience': 'intermediate',
         'progress': 70,
         'color': '#01C38D'
       },
       'mysql': {
+        'grey_url': new URL("@/assets/images/tech-stack/mysql-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/mysql.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'mongo-db': {
+        'grey_url': new URL("@/assets/images/tech-stack/mongo-db-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/mongo-db.png", import.meta.url),
         'experience': 'learning',
         'progress': 30,
         'color': '#01C38D'
       },
       'redis': {
+        'grey_url': new URL("@/assets/images/tech-stack/redis-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/redis.png", import.meta.url),
         'experience': 'intermediate',
         'progress': 70,
         'color': '#01C38D'
       },
       'python': {
+        'grey_url': new URL("@/assets/images/tech-stack/python-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/python.png", import.meta.url),
         'experience': 'learning',
         'progress': 30,
         'color': '#01C38D'
       },
       'php': {
+        'grey_url': new URL("@/assets/images/tech-stack/php-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/php.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'laravel': {
+        'grey_url': new URL("@/assets/images/tech-stack/laravel-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/laravel.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
       },
       'ruby': {
+        'grey_url': new URL("@/assets/images/tech-stack/ruby-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/ruby.png", import.meta.url),
         'experience': 'intermediate',
         'progress': 70,
         'color': '#01C38D'
       },
       'ruby-on-rails': {
+        'grey_url': new URL("@/assets/images/tech-stack/ruby-on-rails-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/ruby-on-rails.png", import.meta.url),
         'experience': 'intermediate',
         'progress': 70,
@@ -248,9 +273,15 @@ export default {
       },
     })
 
+    const swiper = useSwiper()
+
+    watch(swiper, async (newQuestion, oldQuestion) => {
+      console.log(newQuestion)
+      console.log(oldQuestion)
+    })
 
     return {
-      modules: [Mousewheel, Pagination ],
+      modules: [Mousewheel, Pagination],
       skills,
       visible
     };
@@ -314,6 +345,18 @@ export default {
   animation-fill-mode: both;
 }
 
+.about {
+  animation: moveRight 2s;
+  animation-fill-mode: forwards;
+}
+
+.about-me {
+  animation: moveLeft 2s;
+  animation-fill-mode: forwards;
+  -webkit-text-stroke: 4px #01C38D;
+  color: transparent;
+}
+
 @keyframes progressBar {
   0% {
     width: 0;
@@ -321,6 +364,26 @@ export default {
 
   100% {
     width: 100%;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 35%;
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 40%;
   }
 }
 
