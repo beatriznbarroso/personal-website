@@ -5,7 +5,7 @@
     }" :modules="modules" class="mySwiper">
     <swiper-slide class="mt-8">
       <div class="page lg:grid lg:grid-cols-2 lg:justify-items-start h-fit">
-        <div class="w-fit">
+        <div class="w-fit lg:pt-24">
           <div class="font-extrabold w-fit">
             <h3 style="font-family: Playfair, serif;"
               class="typing-effect typing-effect__line1 text-6xl lg:text-9xl text-green-200">
