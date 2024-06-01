@@ -1,9 +1,9 @@
 <template>
-  <swiper :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true"
-    :longSwipes="false" :pagination="{
-        clickable: true,
-        dynamicBullets: true
-      }" :modules="modules" class="mySwiper">
+  <swiper :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true" :longSwipes="false"
+    @swiper="onSwiper" @slideChange="onSlideChange" :pagination="{
+      clickable: true,
+      dynamicBullets: true
+    }" :modules="modules">
     <swiper-slide class="mt-8">
       <div class="page lg:grid lg:grid-cols-2 lg:justify-items-start h-fit">
         <div class="w-fit lg:pt-24">
@@ -58,11 +58,11 @@
       <div class="page mt-4">
         <div class="lg:flex">
           <div class="w-full">
-            <h2 class="about">About</h2>
-            <h2 class="mb-8 about-me">Me</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 font-extralight">
+            <h2 class="about" :class="reveal ? 'block' : 'hidden'">About</h2>
+            <h2 class="mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
               <div>
-                <p>
+                <p class="reveal-text font-extralight" :class="reveal ? 'block' : 'hidden'">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
                 </p>
                 <br>
@@ -96,10 +96,10 @@
     </swiper-slide>
     <swiper-slide>
       <div>
-        <h2 class="ml-32">Professional projects</h2>
+        <h2 class="ml-32">Projects</h2>
         <swiper :pagination="{
             dynamicBullets: true,
-          }" height="576" :modules="modules">
+          }" :height="576" :modules="modules">
           <swiper-slide>
             <img src="../assets/images/goparity-app.png" alt="Goparity app" />
           </swiper-slide>
@@ -116,8 +116,8 @@
 </template>
 
 <script lang="ts">
-import { ref, watch } from 'vue'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { ref } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination } from 'swiper/modules';
@@ -146,7 +146,7 @@ export default {
         'color': '#01C38D'
       },
       'tailwind': {
-        'grey_url': new URL("@/assets/images/tech-stack/tailwind-grey.png", import.meta.url),
+        'grey_url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/tailwind.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
@@ -280,17 +280,26 @@ export default {
       },
     })
 
-    const swiper = useSwiper()
+    const activeIndex = ref(0);
+    const reveal = ref(false);
 
-    watch(swiper, async (newQuestion, oldQuestion) => {
-      console.log(newQuestion)
-      console.log(oldQuestion)
-    })
+    const onSwiper = (swiper: any) => {
+      activeIndex.value = swiper.activeIndex
+    }
 
+    const onSlideChange = (swiper: any) => {
+      activeIndex.value = swiper.activeIndex
+      if (activeIndex.value) reveal.value = true
+      else reveal.value = false
+    }
+  
     return {
       modules: [Mousewheel, Pagination],
       skills,
-      visible
+      visible,
+      onSwiper,
+      onSlideChange,
+      reveal
     };
   },
 };
@@ -311,27 +320,6 @@ export default {
 .typing-effect__line2 {
   animation: typing 2s steps(30, end) forwards, blink-caret 1s infinite;
   animation-delay: 2s;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-
-  to {
-    width: 100%
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: #01C38D
-  }
 }
 
 .meter {
@@ -362,6 +350,43 @@ export default {
   animation-fill-mode: forwards;
   -webkit-text-stroke: 4px #01C38D;
   color: transparent;
+}
+
+.reveal-text {
+  transform: translateY(100%);
+  animation: reveal 1.7s cubic-bezier(1, 0, 0.3, 0.9) forwards
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(100%)
+  }
+
+  to {
+    transform: translateY(0)
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #01C38D
+  }
 }
 
 @keyframes progressBar {
