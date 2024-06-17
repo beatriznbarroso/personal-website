@@ -61,9 +61,15 @@
             <h2 class="about" :class="reveal ? 'block' : 'hidden'">About</h2>
             <h2 class="mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2">
-              <div>
-                <p class="reveal-text font-extralight" :class="reveal ? 'block' : 'hidden'">
+              <div :class="{'reveal-text': reveal }" class=" overflow-hidden">
+                <p class="font-extralight">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta qui, reiciendis sapiente ullam
+                  voluptatibus id error, architecto animi eos quo possimus ut cupiditate vel ad. Fugit optio pariatur
+                  alias. Ipsum!
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, neque eum repellendus expedita,
+                  odio facilis distinctio ipsum perferendis nisi, cum corrupti blanditiis obcaecati. Minus eos rem
+                  molestias veritatis delectus dolorum!
                 </p>
                 <br>
               </div>
@@ -353,17 +359,18 @@ export default {
 }
 
 .reveal-text {
-  transform: translateY(100%);
-  animation: reveal 1.7s cubic-bezier(1, 0, 0.3, 0.9) forwards
+  display: hidden;
+  animation: reveal 1.5s;
 }
 
 @keyframes reveal {
-  from {
-    transform: translateY(100%)
+  0% {
+    transform: translate(0, 100%);
   }
 
-  to {
-    transform: translateY(0)
+  100% {
+    display: block;
+    transform: translate(0, 0);
   }
 }
 
@@ -418,5 +425,4 @@ export default {
     margin-left: 40%;
   }
 }
-
 </style>
