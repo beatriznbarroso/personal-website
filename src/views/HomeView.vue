@@ -1,6 +1,6 @@
 <template>
   <swiper :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true" :longSwipes="false"
-    @swiper="onSwiper" @slideChange="onSlideChange" :pagination="{
+    @swiper="setFirstSwiper" @slideChange="onSlideChange" :pagination="{
       clickable: true,
       dynamicBullets: true
     }" :modules="modules">
@@ -102,20 +102,45 @@
     </swiper-slide>
     <swiper-slide>
       <div>
-        <h2 class="ml-32">Projects</h2>
-        <swiper :pagination="{
-            dynamicBullets: true,
-          }" :height="576" :modules="modules">
-          <swiper-slide>
-            <img src="../assets/images/goparity-app.png" alt="Goparity app" />
-          </swiper-slide>
-          <swiper-slide>
-            <img src="../assets/images/goparity-website.png" alt="Goparity website" />
-          </swiper-slide>
-          <swiper-slide>
-            <img src="../assets/images/bergue.png" alt="Bergue website" />
-          </swiper-slide>
-        </swiper>
+        <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
+        <div class="mt-28">
+          <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="2"
+            :spaceBetween="50" :autoHeight="true" :loop="true" @swiper="setSecondSwiper"
+            @slideChange="onSecondSwiperSlideChange" :autoplay="{
+              delay: 1500,
+              disableOnInteraction: true,
+            }" :coverflowEffect="{
+              rotate: 30,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }" :breakpoints=" { 
+              320: {
+                slidesPerView: 1.1,
+                spaceBetween: 20
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 50
+              }
+            }" :pagination="false" :modules="modules">
+            <swiper-slide>
+              <img src="../assets/images/goparity-website.png" alt="Goparity website" />
+              <div :class="revealDescription ? 'block': 'hidden'">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
+                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
+                aperiam dicta?
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <img src="../assets/images/goparity-app.png" alt="Goparity app" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="../assets/images/bergue.png" alt="Bergue website" />
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </swiper-slide>
   </swiper>
@@ -126,7 +151,8 @@ import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Mousewheel, Pagination } from 'swiper/modules';
+import 'swiper/css/effect-coverflow';
+import { EffectCoverflow, Mousewheel, Pagination } from 'swiper/modules';
 
 export default {
   components: {
@@ -286,26 +312,47 @@ export default {
       },
     })
 
-    const activeIndex = ref(0);
-    const reveal = ref(false);
+    const activeIndex = ref(0)
+    const secondSwiperActiveIndex = ref(0)
+    const reveal = ref(false)
+    const revealDescription = ref(false)
 
-    const onSwiper = (swiper: any) => {
+    const setFirstSwiper = (swiper: any) => {
       activeIndex.value = swiper.activeIndex
+    }
+
+    const setSecondSwiper = (swiper: any) => {
+      secondSwiperActiveIndex.value = swiper.activeIndex
+    }
+
+    const onSecondSwiperSlideChange = (swiper: any) => {
+      secondSwiperActiveIndex.value = swiper.activeIndex
+      if (secondSwiperActiveIndex.value) 
+        revealDescription.value = true
+      else 
+        revealDescription.value = false
     }
 
     const onSlideChange = (swiper: any) => {
       activeIndex.value = swiper.activeIndex
-      if (activeIndex.value) reveal.value = true
-      else reveal.value = false
+      if (activeIndex.value){
+        reveal.value = true
+      } 
+      else {
+        reveal.value = false
+      }
     }
   
     return {
-      modules: [Mousewheel, Pagination],
+      modules: [EffectCoverflow, Mousewheel, Pagination],
       skills,
       visible,
-      onSwiper,
+      setFirstSwiper,
+      setSecondSwiper,
       onSlideChange,
-      reveal
+      onSecondSwiperSlideChange,
+      reveal,
+      revealDescription
     };
   },
 };
