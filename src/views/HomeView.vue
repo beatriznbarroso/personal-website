@@ -103,7 +103,7 @@
     <swiper-slide>
       <div>
         <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
-        <div class="mt-28">
+        <div class="mt-20">
           <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="2"
             :spaceBetween="50" :autoHeight="true" :loop="true" @swiper="setSecondSwiper"
             @slideChange="onSecondSwiperSlideChange" :autoplay="{
@@ -121,13 +121,13 @@
                 spaceBetween: 20
               },
               640: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 50
               }
             }" :pagination="false" :modules="modules">
             <swiper-slide>
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
-              <div :class="revealDescription ? 'block': 'hidden'">
+              <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
                 assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
                 aperiam dicta?
@@ -135,9 +135,19 @@
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/goparity-app.png" alt="Goparity app" />
+              <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
+                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
+                aperiam dicta?
+              </div>
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/bergue.png" alt="Bergue website" />
+              <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
+                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
+                aperiam dicta?
+              </div>
             </swiper-slide>
           </swiper>
         </div>
@@ -326,11 +336,8 @@ export default {
     }
 
     const onSecondSwiperSlideChange = (swiper: any) => {
+      console.log(secondSwiperActiveIndex.value)
       secondSwiperActiveIndex.value = swiper.activeIndex
-      if (secondSwiperActiveIndex.value) 
-        revealDescription.value = true
-      else 
-        revealDescription.value = false
     }
 
     const onSlideChange = (swiper: any) => {
@@ -347,6 +354,7 @@ export default {
       modules: [EffectCoverflow, Mousewheel, Pagination],
       skills,
       visible,
+      secondSwiperActiveIndex,
       setFirstSwiper,
       setSecondSwiper,
       onSlideChange,
