@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="w-full">
-          <div class="flex items-end lg:items-center justify-start lg:justify-end mt-2 lg:mt-0">
+          <div class="flex items-center justify-start lg:justify-end mt-2 lg:mt-0">
             <svg class="hidden lg:block w-32 animate-pulse" viewBox="0 0 210 80" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -103,19 +103,30 @@
     <swiper-slide>
       <div>
         <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
-        <div class="mt-20">
-          <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="2"
-            :spaceBetween="50" :autoHeight="true" :loop="true" @swiper="setSecondSwiper"
-            @slideChange="onSecondSwiperSlideChange" :autoplay="{
+        <div class="mt-8">
+          <swiper 
+            :effect="'coverflow'" 
+            :grabCursor="true" 
+            :centeredSlides="true" 
+            :slidesPerView="3" 
+            :initialSlide="1"
+            :spaceBetween="50" 
+            :autoHeight="true" 
+            :loop="true"
+            @swiper="setSecondSwiper"
+            @slideChange="onSecondSwiperSlideChange" 
+            :autoplay="{
               delay: 1500,
               disableOnInteraction: true,
-            }" :coverflowEffect="{
+            }" 
+            :coverflowEffect="{
               rotate: 30,
               stretch: 0,
               depth: 100,
               modifier: 1,
               slideShadows: true,
-            }" :breakpoints=" { 
+            }" 
+            :breakpoints=" { 
               320: {
                 slidesPerView: 1.1,
                 spaceBetween: 20
@@ -124,13 +135,16 @@
                 slidesPerView: 2,
                 spaceBetween: 50
               }
-            }" :pagination="false" :modules="modules">
+            }" 
+            :pagination="false" :modules="modules">
             <swiper-slide>
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
               <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
-                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
-                aperiam dicta?
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
+                  assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
+                  aperiam dicta?
+                </p>
               </div>
             </swiper-slide>
             <swiper-slide>
@@ -336,8 +350,7 @@ export default {
     }
 
     const onSecondSwiperSlideChange = (swiper: any) => {
-      console.log(secondSwiperActiveIndex.value)
-      secondSwiperActiveIndex.value = swiper.activeIndex
+      secondSwiperActiveIndex.value = swiper.realIndex
     }
 
     const onSlideChange = (swiper: any) => {
