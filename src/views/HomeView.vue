@@ -43,12 +43,11 @@
             </a>
           </div>
           <div>
-            <div class="relative w-72">
+            <div class="w-96">
               <div>
                 <img src="../assets/images/beatriz.png" alt="My photo"
-                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-20">
+                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-20 hover:animate-bounce">
               </div>
-              <div class="absolute bg-green-200 h-12 top-1/2 w-full rotate-45 opacity-30"></div>
             </div>
           </div>
         </div>
@@ -127,7 +126,7 @@
             }" :pagination="false" :modules="modules">
             <swiper-slide>
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
-              <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'">
+              <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'" class="mt-2">
                 <p>
                   Frontend project demonstrated Goparity's product, an impact investment crowdleding platform. This
                   frontend interacted with a REST API, optimized for strong SEO.
@@ -142,7 +141,7 @@
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/goparity-app.png" alt="Goparity app" />
-              <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'">
+              <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'" class="mt-2">
                 Goparity's platform, allowing investors to have a virtual wallet, topping it up, invest in projects and
                 receive the money back.
                 Project owners would pay back the investors in instalments. Developed features as automatic investment,
@@ -161,7 +160,7 @@
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/bergue.png" alt="Bergue website" />
-              <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'">
+              <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'" class="mt-2">
                 Developed a back office for stock management
                 <div class="flex justify-start mt-4">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
