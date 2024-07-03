@@ -104,29 +104,18 @@
       <div>
         <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
         <div class="mt-8">
-          <swiper 
-            :effect="'coverflow'" 
-            :grabCursor="true" 
-            :centeredSlides="true" 
-            :slidesPerView="3" 
-            :initialSlide="1"
-            :spaceBetween="50" 
-            :autoHeight="true" 
-            :loop="true"
-            @swiper="setSecondSwiper"
-            @slideChange="onSecondSwiperSlideChange" 
+          <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="1"
+            :spaceBetween="50" :loop="true" @swiper="setSecondSwiper" @slideChange="onSecondSwiperSlideChange"
             :autoplay="{
               delay: 1500,
               disableOnInteraction: true,
-            }" 
-            :coverflowEffect="{
+            }" :coverflowEffect="{
               rotate: 30,
               stretch: 0,
               depth: 100,
               modifier: 1,
               slideShadows: true,
-            }" 
-            :breakpoints=" { 
+            }" :breakpoints=" { 
               320: {
                 slidesPerView: 1.1,
                 spaceBetween: 20
@@ -135,32 +124,50 @@
                 slidesPerView: 2,
                 spaceBetween: 50
               }
-            }" 
-            :pagination="false" :modules="modules">
+            }" :pagination="false" :modules="modules">
             <swiper-slide>
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
               <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
-                  assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
-                  aperiam dicta?
+                  Frontend project demonstrated Goparity's product, an impact investment crowdleding platform. This
+                  frontend interacted with a REST API, optimized for strong SEO.
                 </p>
+                <div class="flex justify-start mt-4">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Nuxt</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Tailwind CSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">SCSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PWA</div>
+                </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/goparity-app.png" alt="Goparity app" />
               <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
-                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
-                aperiam dicta?
+                Goparity's platform, allowing investors to have a virtual wallet, topping it up, invest in projects and
+                receive the money back.
+                Project owners would pay back the investors in instalments. Developed features as automatic investment,
+                authentication system and other financial instruments.
+                <div class="flex justify-start mt-4">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Vue</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Tailwind CSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">SCSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">MySQL</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">REST API</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Redis</div>
+                </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <img src="../assets/images/bergue.png" alt="Bergue website" />
               <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolore id odio ut sit consequatur
-                assumenda quibusdam, modi minus doloribus fugit porro tenetur eos omnis accusamus! Asperiores voluptate
-                aperiam dicta?
+                Developed a back office for stock management
+                <div class="flex justify-start mt-4">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">October CMS</div>
+                </div>
               </div>
             </swiper-slide>
           </swiper>
