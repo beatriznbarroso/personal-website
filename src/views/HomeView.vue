@@ -130,9 +130,7 @@
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
               <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'" class="mt-2">
                 <p>
-                  <a href="" class="border-b-2 transition ease-in-out delay-150 hover:pb-1" target="_blank">
-                    Goparity's
-                    public pages</a>
+                  <a href="https://goparity.com/" class="link-hover" target="_blank">Goparity's public pages</a>
                   demonstrating the product, an impact investment crowdleding platform. This
                   frontend interacted with a REST API, optimized for a strong SEO.
                 </p>
@@ -147,7 +145,8 @@
             <swiper-slide>
               <img src="../assets/images/goparity-app.png" alt="Goparity app" />
               <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'" class="mt-2">
-                Goparity's platform, allowing investors to have a virtual wallet, topping it up, invest in projects and
+                <a href="https://app.goparity.com/" class="link-hover" target="_blank">Goparity's</a> platform, allowing
+                investors to have a virtual wallet, topping it up, invest in projects and
                 receive the money back.
                 Project owners would pay back the investors in instalments. Developed features such as automatic
                 investment, implementing ETFs,
@@ -168,12 +167,24 @@
             <swiper-slide>
               <img src="../assets/images/bergue.png" alt="Bergue website" />
               <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'" class="mt-2">
-                Developed a back office for stock management
+                Developed a stock management back office for <a href="https://www.berguejewelry.com/" class="link-hover"
+                  target="_blank">Bergue</a> a jewelry shop located in Lisbon
                 <div class="flex justify-start mt-4 text-sm">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">October CMS</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">MySQL</div>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <img src="../assets/images/tic-tac-toe.png" alt="Bergue website" />
+              <div :class="secondSwiperActiveIndex === 3 ? 'block' : 'hidden'" class="mt-2">
+                Developed a <a href="https://beatriznbarroso.github.io/tic-tac-toe/" class="link-hover"
+                  target="_blank">Tic Tac Toe game</a> - a personal project - built in React in order to learn this new
+                framework
+                <div class="flex justify-start mt-4 text-sm">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">React</div>
                 </div>
               </div>
             </swiper-slide>
@@ -440,6 +451,16 @@ export default {
   animation-fill-mode: forwards;
   -webkit-text-stroke: 1px #01C38D;
   color: transparent;
+}
+
+.link-hover {
+  text-underline-offset: 0.2em;
+  text-decoration: underline 0.15em;
+  transition: text-underline-offset 400ms;
+}
+
+.link-hover:hover, .link-hover:focus {
+  text-underline-offset: 0.4em;
 }
 
 .reveal-text {
