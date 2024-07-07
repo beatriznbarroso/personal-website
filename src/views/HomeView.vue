@@ -44,9 +44,12 @@
           </div>
           <div>
             <div class="w-96">
-              <div>
+              <div class="relative">
                 <img src="../assets/images/beatriz.png" alt="My photo"
-                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-20 hover:animate-bounce">
+                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-20">
+                <!-- <img src="../assets/images/conversation-box.png" alt="ConversationBox"
+                  class="hidden absolute bottom-40 inset-x-2/3"
+                  :class="{ 'block animate-bounce': revealConversationBox }"> -->
               </div>
             </div>
           </div>
@@ -59,8 +62,8 @@
           <div class="w-full">
             <h2 class="about" :class="reveal ? 'block' : 'hidden'">About</h2>
             <h2 class="mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2">
-              <div :class="{'reveal-text': reveal }" class=" overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-start">
+              <div :class="{'reveal-text': reveal }" class="overflow-hidden">
                 <p class="font-extralight">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta qui, reiciendis sapiente ullam
@@ -72,9 +75,8 @@
                 </p>
                 <br>
               </div>
-              <div class="place-self-center lg:mt-0">
-
-              </div>
+              <img src="../assets/images/xero-code.gif" alt=""
+                class="!object-contain !h-3/6 lg:mt-[-70px] overflow-hidden" :class="{ 'reveal-text': reveal }">
             </div>
           </div>
         </div>
@@ -102,7 +104,7 @@
     <swiper-slide>
       <div>
         <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
-        <div class="mt-8">
+        <div class="mt-32 lg:mt-4">
           <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="1"
             :spaceBetween="50" :loop="true" @swiper="setSecondSwiper" @slideChange="onSecondSwiperSlideChange"
             :autoplay="{
@@ -128,10 +130,13 @@
               <img src="../assets/images/goparity-website.png" alt="Goparity website" />
               <div :class="secondSwiperActiveIndex === 0 ? 'block': 'hidden'" class="mt-2">
                 <p>
-                  Frontend project demonstrated Goparity's product, an impact investment crowdleding platform. This
-                  frontend interacted with a REST API, optimized for strong SEO.
+                  <a href="" class="border-b-2 transition ease-in-out delay-150 hover:pb-1" target="_blank">
+                    Goparity's
+                    public pages</a>
+                  demonstrating the product, an impact investment crowdleding platform. This
+                  frontend interacted with a REST API, optimized for a strong SEO.
                 </p>
-                <div class="flex justify-start mt-4">
+                <div class="flex justify-start mt-4 text-sm">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Nuxt</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Tailwind CSS</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">SCSS</div>
@@ -144,17 +149,19 @@
               <div :class="secondSwiperActiveIndex === 1 ? 'block' : 'hidden'" class="mt-2">
                 Goparity's platform, allowing investors to have a virtual wallet, topping it up, invest in projects and
                 receive the money back.
-                Project owners would pay back the investors in instalments. Developed features as automatic investment,
+                Project owners would pay back the investors in instalments. Developed features such as automatic
+                investment, implementing ETFs,
                 authentication system and other financial instruments.
-                <div class="flex justify-start mt-4">
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Vue</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Tailwind CSS</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">SCSS</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">MySQL</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">REST API</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Redis</div>
+                <div class="flex justify-start mt-4 flex-wrap text-sm">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Vue</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Tailwind CSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">SCSS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Typescript</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">MySQL</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">PHP</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Laravel</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">REST API</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Redis</div>
                 </div>
               </div>
             </swiper-slide>
@@ -162,10 +169,11 @@
               <img src="../assets/images/bergue.png" alt="Bergue website" />
               <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'" class="mt-2">
                 Developed a back office for stock management
-                <div class="flex justify-start mt-4">
+                <div class="flex justify-start mt-4 text-sm">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">October CMS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">MySQL</div>
                 </div>
               </div>
             </swiper-slide>
@@ -346,6 +354,7 @@ export default {
     const secondSwiperActiveIndex = ref(0)
     const reveal = ref(false)
     const revealDescription = ref(false)
+    const revealConversationBox = ref(false)
 
     const setFirstSwiper = (swiper: any) => {
       activeIndex.value = swiper.activeIndex
@@ -379,6 +388,7 @@ export default {
       onSlideChange,
       onSecondSwiperSlideChange,
       reveal,
+      revealConversationBox,
       revealDescription
     };
   },
@@ -428,7 +438,7 @@ export default {
 .about-me {
   animation: moveLeft 2s;
   animation-fill-mode: forwards;
-  -webkit-text-stroke: 4px #01C38D;
+  -webkit-text-stroke: 1px #01C38D;
   color: transparent;
 }
 

@@ -12,15 +12,6 @@
   height: 100%;
 }
 
-a {
-  @apply font-medium text-purple-600;
-  transition: 0.4s;
-}
-
-a:hover {
-  @apply font-semibold text-purple-700;
-}
-
 .page {
   @apply mx-2 lg:mx-32 2xl:mx-64 w-full lg:w-320 2xl:w-420 p-4;
 }
