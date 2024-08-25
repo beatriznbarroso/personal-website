@@ -154,9 +154,7 @@
                 <a href="https://app.goparity.com/" class="link-hover" target="_blank">Goparity's</a> platform, allowing
                 investors to have a virtual wallet, topping it up, invest in projects and
                 receive the money back.
-                Project owners would pay back the investors in instalments. Developed features such as automatic
-                investment, implementing ETFs,
-                authentication system and other financial instruments.
+                Developed features such as automatic investment, implementing ETFs, authentication system and other financial instruments.
                 <div class="flex justify-start mt-4 flex-wrap text-sm">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Vue</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Tailwind CSS</div>
@@ -466,10 +464,10 @@ export default {
   text-underline-offset: 0.4em;
 }
 
-.my-photo {
-  transform: translatey(0px);
-  animation: float 3s ease-in-out infinite;
-}
+// .my-photo {
+//   transform: translatey(0px);
+//   animation: float 3s ease-in-out infinite;
+// }
 
 .reveal-text {
   display: hidden;
@@ -543,17 +541,17 @@ export default {
   }
 }
 
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
+// @keyframes float {
+//   0% {
+//     transform: translatey(0px);
+//   }
 
-  50% {
-    transform: translatey(-20px);
-  }
+//   50% {
+//     transform: translatey(-20px);
+//   }
 
-  100% {
-    transform: translatey(0px);
-  }
-}
+//   100% {
+//     transform: translatey(0px);
+//   }
+// }
 </style>
