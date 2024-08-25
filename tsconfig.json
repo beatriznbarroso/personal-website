@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "module": "esnext", // or "es2020", "es2022", "system", "node16", "nodenext"
+    "target": "esnext", // Ensure this is compatible with your chosen module
+    "moduleResolution": "node", // Optional but recommended
+    // other options...
+  },
   "files": [],
   "references": [
     {
