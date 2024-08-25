@@ -72,8 +72,9 @@
                 </p>
                 <br>
               </div>
-              <img src="../assets/images/xero-code.gif" alt=""
-                class="!object-contain !h-3/6 lg:mt-[-70px] overflow-hidden" :class="{ 'reveal-text': reveal }">
+              <img src="../assets/images/xero-code.gif" alt="Animation"
+                class="!object-contain !h-2/5 lg:!h-3/6 lg:mt-[-70px] overflow-hidden"
+                :class="{ 'reveal-text': reveal }">
             </div>
           </div>
         </div>
@@ -84,8 +85,8 @@
         <h2 class="mb-8">Skill Set</h2>
         <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
-            <img :src="visible === index ? value['url'] : value['grey_url']" class="h-14 hover:scale-125 transition-transform"
-              @mouseover="visible = index" @mouseout="visible = null">
+            <img :src="visible === index ? value['url'] : value['grey_url']"
+              class="h-10 lg:h-14 hover:scale-125 transition-transform" @mouseover="visible = index" @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
               <div class="meter my-1 rounded-r-lg">
@@ -519,7 +520,7 @@ export default {
   }
 
   to {
-    margin-left: 35%;
+    margin-left: 30%;
   }
 }
 
