@@ -46,7 +46,7 @@
             <div class="w-96">
               <div class="relative">
                 <img src="../assets/images/beatriz.png" alt="My photo"
-                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-20 my-photo">
+                  class="rounded-[50%/60%_60%_60%_60%] drop-shadow-[0px_15px_3px_rgba(0,0,0,0.25)] opacity-40 my-photo">
               </div>
             </div>
           </div>
@@ -55,11 +55,11 @@
     </swiper-slide>
     <swiper-slide>
       <div class="page mt-4">
-        <div class="lg:flex">
+        <div class="xl:flex">
           <div class="w-full">
             <h2 class="about" :class="reveal ? 'block' : 'hidden'">About</h2>
             <h2 class="mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-start">
+            <div class="grid grid-cols-1 xl:grid-cols-2 items-start">
               <div :class="{'reveal-text': reveal }" class="overflow-hidden">
                 <p class="font-extralight">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
@@ -73,7 +73,7 @@
                 <br>
               </div>
               <img src="../assets/images/xero-code.gif" alt="Animation"
-                class="!object-contain !h-2/5 lg:!h-3/6 lg:mt-[-70px] overflow-hidden"
+                class="!object-contain !h-2/5 xl:!h-3/6 lg:mt-[-70px] overflow-hidden"
                 :class="{ 'reveal-text': reveal }">
             </div>
           </div>
@@ -512,6 +512,10 @@ export default {
   100% {
     width: 100%;
   }
+}
+
+@media (max-width: 700) {
+  /* … */
 }
 
 @keyframes moveRight {

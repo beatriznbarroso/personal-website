@@ -13,7 +13,7 @@
 }
 
 .page {
-  @apply mx-2 lg:mx-32 2xl:mx-64 w-full lg:w-320 2xl:w-420 p-4;
+  @apply mx-2 lg:mx-32 2xl:mx-64 w-full md:w-screen xl:w-320 2xl:w-420 px-4;
 }
 
 h1,
