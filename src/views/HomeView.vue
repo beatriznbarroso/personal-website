@@ -446,14 +446,18 @@ export default {
   animation-fill-mode: both;
 }
 
-.about {
-  animation: moveRight 2s;
-  animation-fill-mode: forwards;
+@media screen and (min-width: 1000px) {
+  .about {
+    animation: moveRight 2s;
+    animation-fill-mode: forwards;
+  }
+  .about-me {
+    animation: moveLeft 2s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .about-me {
-  animation: moveLeft 2s;
-  animation-fill-mode: forwards;
   -webkit-text-stroke: 1px #01C38D;
   color: transparent;
 }
