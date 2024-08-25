@@ -57,8 +57,9 @@
       <div class="page mt-4">
         <div class="xl:flex">
           <div class="w-full">
-            <h2 class="about" :class="reveal ? 'block' : 'hidden'">About</h2>
-            <h2 class="mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
+            <h2 class="about mb-4 lg:mb-0" :class="reveal ? 'block' : 'hidden'">About <span
+                class="lg:hidden about-me">Me</span></h2>
+            <h2 class="hidden lg:block mb-8 about-me" :class="reveal ? 'block' : 'hidden'">Me</h2>
             <div class="grid grid-cols-1 xl:grid-cols-2 items-start">
               <div :class="{'reveal-text': reveal }" class="overflow-hidden">
                 <p class="font-extralight">
@@ -68,12 +69,12 @@
                   always been
                   a massive tech geek and when I came accross programming I knew I couldn't turn back.
                   <br />
-                  I started in 2018 with some workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019. After being hired at Goparity, I came
-                  accross multiple
-                  challenges that helped me grow. From learning new languages, to understand servers or how to scale and solve
-                  growth problems.
-                  After 4 years on the job, I became the person in charge of tech department, becoming the ultimate responsible
-                  person for the platform
+                  I started in 2018 with some workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
+                  After being hired at Goparity, I came accross multiple
+                  challenges that helped me grow. From learning new languages, to understand servers or how to scale and
+                  solve growth problems.
+                  After 4 years on the job, I became the person in charge of tech department, becoming the ultimate
+                  responsible person for the platform
                   as well dealing with the stakeholders, manage developers and QAs and still code.
                 </p>
                 <br>
@@ -89,10 +90,10 @@
     <swiper-slide>
       <div class="page">
         <h2 class="mb-8">Skill Set</h2>
-        <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
+        <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-2 lg:gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
             <img :src="visible === index ? value['url'] : value['grey_url']"
-              class="h-10 lg:h-14 hover:scale-125 transition-transform" @mouseover="visible = index"
+              class="!h-fit lg:h-14 object-cover	hover:scale-125 transition-transform" @mouseover="visible = index"
               @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
@@ -123,7 +124,7 @@
               slideShadows: true,
             }" :breakpoints=" { 
               320: {
-                slidesPerView: 1.1,
+                slidesPerView: 1.2,
                 spaceBetween: 20
               },
               640: {
@@ -248,13 +249,6 @@ export default {
       'materialize': {
         'grey_url': new URL("@/assets/images/tech-stack/materialize-grey.png", import.meta.url),
         'url': new URL("@/assets/images/tech-stack/materialize.png", import.meta.url),
-        'experience': 'proficient',
-        'progress': 100,
-        'color': '#01C38D'
-      },
-      'jquery': {
-        'grey_url': new URL("@/assets/images/tech-stack/jquery-grey.png", import.meta.url),
-        'url': new URL("@/assets/images/tech-stack/jquery.png", import.meta.url),
         'experience': 'proficient',
         'progress': 100,
         'color': '#01C38D'
