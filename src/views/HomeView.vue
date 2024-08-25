@@ -110,7 +110,7 @@
     <swiper-slide>
       <div>
         <h2 class="ml-4 lg:ml-32 2xl:ml-64">Projects</h2>
-        <div class="mt-32 lg:mt-4">
+        <div class="mt-16 lg:mt-4">
           <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :initialSlide="1"
             :spaceBetween="50" :loop="true" @swiper="setSecondSwiper" @slideChange="onSecondSwiperSlideChange"
             :autoplay="{
@@ -175,11 +175,11 @@
               <div :class="secondSwiperActiveIndex === 2 ? 'block' : 'hidden'" class="mt-2">
                 Developed a stock management back office for <a href="https://www.berguejewelry.com/" class="link-hover"
                   target="_blank">Bergue</a> a jewelry shop located in Lisbon
-                <div class="flex justify-start mt-4 text-sm">
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">PHP</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">Laravel</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">October CMS</div>
-                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2">MySQL</div>
+                <div class="flex justify-start flex-wrap mt-4 text-sm">
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">PHP</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Laravel</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">October CMS</div>
+                  <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">MySQL</div>
                 </div>
               </div>
             </swiper-slide>
