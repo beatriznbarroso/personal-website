@@ -63,12 +63,18 @@
               <div :class="{'reveal-text': reveal }" class="overflow-hidden">
                 <p class="font-extralight">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta qui, reiciendis sapiente ullam
-                  voluptatibus id error, architecto animi eos quo possimus ut cupiditate vel ad. Fugit optio pariatur
-                  alias. Ipsum!
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, neque eum repellendus expedita,
-                  odio facilis distinctio ipsum perferendis nisi, cum corrupti blanditiis obcaecati. Minus eos rem
-                  molestias veritatis delectus dolorum!
+                  <br />
+                  I started my coding journey after finishing my degree in Theatre. I know this is unusual, but I have
+                  always been
+                  a massive tech geek and when I came accross programming I knew I couldn't turn back.
+                  <br />
+                  I started in 2018 with some workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019. After being hired at Goparity, I came
+                  accross multiple
+                  challenges that helped me grow. From learning new languages, to understand servers or how to scale and solve
+                  growth problems.
+                  After 4 years on the job, I became the person in charge of tech department, becoming the ultimate responsible
+                  person for the platform
+                  as well dealing with the stakeholders, manage developers and QAs and still code.
                 </p>
                 <br>
               </div>
@@ -86,7 +92,8 @@
         <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-24">
             <img :src="visible === index ? value['url'] : value['grey_url']"
-              class="h-10 lg:h-14 hover:scale-125 transition-transform" @mouseover="visible = index" @mouseout="visible = null">
+              class="h-10 lg:h-14 hover:scale-125 transition-transform" @mouseover="visible = index"
+              @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
               <div class="meter my-1 rounded-r-lg">
