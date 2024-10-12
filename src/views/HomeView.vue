@@ -65,19 +65,15 @@
                 <p class="font-extralight">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
                   <br />
-                  I started my coding journey after finishing my degree in Theatre. I know this is unusual, but I have
-                  always been
-                  a massive tech geek and when I came accross programming I knew I couldn't turn back.
+                  I have always been a massive tech-geek and when I came across programming I knew I couldn't turn back.
                   <br />
-                  I started in 2018 with some workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
-                  After being hired at Goparity, I came accross multiple
-                  challenges that helped me grow. From learning new languages, to understand servers or how to scale and
+                  I started in 2018 with workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
+                  I've been adapting and learning on the job constantly. From learning new languages, to understand servers or how to scale and
                   solve growth problems.
                   After 4 years on the job, I became the person in charge of tech department, becoming the ultimate
                   responsible person for the platform
                   as well dealing with the stakeholders, manage developers and QAs and still code.
                 </p>
-                <br>
               </div>
               <img src="../assets/images/xero-code.gif" alt="Animation"
                 class="!object-contain !h-2/5 xl:!h-3/6 lg:mt-[-70px] overflow-hidden"
@@ -449,9 +445,8 @@ export default {
   }
 }
 
-.about-me {
-  -webkit-text-stroke: 1px #01C38D;
-  color: transparent;
+.about, .about-me {
+  -webkit-text-stroke: 1px white;
 }
 
 .link-hover {
