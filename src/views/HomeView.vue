@@ -68,7 +68,8 @@
                   I have always been a massive tech-geek and when I came across programming I knew I couldn't turn back.
                   <br />
                   I started in 2018 with workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
-                  I've been adapting and learning on the job constantly. From learning new languages, to understand servers or how to scale and
+                  I've been adapting and learning on the job constantly. From learning new languages, to understand
+                  servers or how to scale and
                   solve growth problems.
                   After 4 years on the job, I became the person in charge of tech department, becoming the ultimate
                   responsible person for the platform
@@ -86,11 +87,11 @@
     <swiper-slide>
       <div class="page">
         <h2 class="mb-8">Skill Set</h2>
-        <div class="grid grid-cols-4 lg:grid-cols-7 gap-y-2 lg:gap-y-8 gap-x-2 place-items-center">
-          <div v-for="(value, key, index) in skills" :key="index" class="h-24">
-            <img :src="visible === index ? value['url'] : value['grey_url']"
-              class="!h-fit lg:h-14 object-cover	hover:scale-125 transition-transform" @mouseover="visible = index"
-              @mouseout="visible = null">
+        <div
+          class="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-7 gap-y-4 md:gap-y-12 xl:gap-y-8 gap-x-2 place-items-center">
+          <div v-for="(value, key, index) in skills" :key="index" class="h-16 md:h-24">
+            <img :src="value['grey_url']" class="!h-fit object-cover hover:scale-125 transition-transform"
+              @mouseover="visible = index" @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
               <div class="meter my-1 rounded-r-lg">
@@ -150,7 +151,8 @@
                 <a href="https://app.goparity.com/" class="link-hover" target="_blank">Goparity's</a> platform, allowing
                 investors to have a virtual wallet, topping it up, invest in projects and
                 receive the money back.
-                Developed features such as automatic investment, implementing ETFs, authentication system and other financial instruments.
+                Developed features such as automatic investment, implementing ETFs, authentication system and other
+                financial instruments.
                 <div class="flex justify-start mt-4 flex-wrap text-sm">
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Vue</div>
                   <div class="bg-green-200 px-2 py-1 rounded-lg font-semibold mr-2 mb-2">Tailwind CSS</div>
