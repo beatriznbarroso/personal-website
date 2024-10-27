@@ -1,5 +1,6 @@
 <template>
-  <swiper :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true" :longSwipes="false"
+  <swiper 
+    :direction="'vertical'" :autoplay="false" :slidesPerView="1" :mousewheel="true" :longSwipes="false"
     @swiper="setFirstSwiper" @slideChange="onSlideChange" :pagination="{
       clickable: true,
       dynamicBullets: true
@@ -88,9 +89,9 @@
       <div class="page">
         <h2 class="mb-8">Skill Set</h2>
         <div
-          class="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-7 gap-y-4 md:gap-y-12 xl:gap-y-8 gap-x-2 place-items-center">
+          class="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-7 gap-y-4 md:gap-y-12 lg:gap-y-16 xl:gap-y-8 gap-x-2 place-items-center">
           <div v-for="(value, key, index) in skills" :key="index" class="h-16 md:h-24">
-            <img :src="value['grey_url']" class="!h-fit object-cover hover:scale-125 transition-transform"
+            <img :src="value['grey_url']" class="!object-cover hover:scale-125 transition-transform"
               @mouseover="visible = index" @mouseout="visible = null">
             <div v-if="visible === index" class="mt-4">
               <p class="text-xs text-gray-100">skill level</p>
