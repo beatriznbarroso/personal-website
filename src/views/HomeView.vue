@@ -65,7 +65,7 @@
               <div :class="{'reveal-text': reveal }" class="overflow-hidden">
                 <p class="font-extralight text-sm md:text-2xl lg:text-3xl xl:text-lg">
                   Hello 👋 My name is a Beatriz and I'm a self-made developer.
-                  <br />
+                  <br /> 
                   I have always been a massive tech-geek and when I came across programming I knew I couldn't turn back.
                   <br />
                   I started in 2018 with workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
