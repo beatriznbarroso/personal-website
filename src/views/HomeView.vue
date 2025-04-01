@@ -69,7 +69,7 @@
                   I have always been a massive tech-geek and when I came across programming I knew I couldn't turn back.
                   <br />
                   I started in 2018 with workshops at SheCodes and then decided to do the LeWagon bootcamp in 2019.
-                  I've been adapting and learning on the job constantly. From learning new languages, to understand
+                  I've been adapting and learning on the job constantly. From learning new languages, to understanding
                   servers or how to scale and
                   solve growth problems.
                   After 4 years on the job, I became the person in charge of tech department, becoming the ultimate
